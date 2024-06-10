@@ -5,4 +5,32 @@
 
 {% block content %}
 <h1>This is employee list page</h1>
+<div class = "container mt-5">
+    <table class="table table-striped-columns table-hover">
+        <thead class="table-light">
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th colspan="3">Action</th>
+          </tr>
+        </thead>
+</div>
+<tbody>
+    {% for val in data %}
+    <tr>
+        <td>{{ forloop.counter}}</td>
+        <td>{{ val.full_name }}</td>
+        <td>{{ val.contact }}</td>
+        <td>{{ val.email }}</td>
+        <td>{{ val.department }}</td>
+        <td><a herf = "www.google.com">Edit</a></td>
+        <td><a herf = "#">Show</a></td>
+        <td><a herf = "#">Delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
 {% endblock %}
